@@ -10,11 +10,14 @@ import {Rook} from "./figures/Rook";
 export class Board {
     cells: Cell[][] = []
 
+    // COMMENT: в коде есть рестарт доски, как альтернативный вариант сброс можно реализовать здесь
 
     public initCells() {
         for (let i = 0; i < 8; i++) {
             const row: Cell[] = []
             for (let j = 0; j < 8; j++) {
+                // COMMENT: можно упростить выбор цвета через тернар
+                // const color = (i + j) % 2 !== 0 ? Colors.BLACK : Colors.WHITE;
                 if ((i + j) % 2 !== 0) {
                     row.push(new Cell(this, j, i, Colors.BLACK, null)) // black cell
                 } else {
@@ -30,6 +33,8 @@ export class Board {
     }
 
     private addKings() {
+        // COMMENT: лучше использовать форму записи
+        // this.getCell(x, y).setFigure(new Figure(Color));
         new King(Colors.BLACK, this.getCell(4, 0));
         new King(Colors.WHITE, this.getCell(4, 7));
     }
