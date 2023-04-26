@@ -6,6 +6,7 @@ import {Player} from "../models/Player";
 
 interface BoardProps {
     board: Board;
+    // COMMENT: проп не используется
     setBoard: (board: Board) => void;
     currentPlayer: Player | null;
     turnPlayer: () => void;
@@ -35,12 +36,14 @@ const BoardComponent: FC<BoardProps> = ({board, currentPlayer, turnPlayer}) => {
     return (
         <div className='board'>
             {board.cells.map((row, index) =>
+                // COMMENT: через двойной map можно развернуть матрицу и избавиться от фрагмента
                <React.Fragment key={index}>
                    {row.map(cell =>
                     <CellComponent
                         click={click}
                         cell={cell}
                         key={cell.id}
+                        // COMMENT: можно использовать сравнение по id
                         selected={cell.x === selectedCell?.x && cell.y === selectedCell?.y}
                     />
                    )}

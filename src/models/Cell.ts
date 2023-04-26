@@ -86,6 +86,7 @@ export class Cell {
         this.figure.cell = this;
     }
 
+    // COMMENT: думаю лучше производить манипуляции с фигуркой в её экземпляре
     moveFigure(target: Cell) {
         if (this.figure && this.figure?.canMove(target)) {
             this.figure.moveFigure(target);

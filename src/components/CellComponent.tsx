@@ -10,6 +10,7 @@ interface CellProps {
 const CellComponent: FC<CellProps> = ({cell, selected, click}) => {
     return (
         <div
+            // COMMENT: есть библиотека для работы с классами https://www.npmjs.com/package/classnames
             className={['cell', cell.color, selected ? 'selected' : ''].join(' ')}
             onClick={() => click(cell)}
         >

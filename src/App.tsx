@@ -6,16 +6,19 @@ import {Player} from "./models/Player";
 import {Colors} from "./models/Colors";
 
 const App = () => {
+    // COMMENT: если переменную не нужно менять через setter, лучше использовать useMemo
     const [board, setBoard] = useState(new Board());
     const [whitePlayer] = useState(new Player(Colors.WHITE));
     const [blackPlayer] = useState(new Player(Colors.BLACK));
     const [currentPlayer, setCurrentPlayer] = useState<Player | null>(null);
 
+    // COMMENT: в этом эффекте нет надобности, можно задать дефолтные значения вместо него
     useEffect(() => {
        restart();
        setCurrentPlayer(whitePlayer);
     }, []);
 
+    // COMMENT: перезапуск можно перенести в Board
     function restart() {
         const newBoard = new Board();
         newBoard.initCells();
