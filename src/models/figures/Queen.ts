@@ -18,8 +18,6 @@ export class Queen extends Figure {
             return true;
         if (this.cell.horizontallyAvailable(target))
             return true;
-        if (this.cell.diagonallyAvailable(target))
-            return true;
-        return false;
+        return this.cell.diagonallyAvailable(target);
     }
 }

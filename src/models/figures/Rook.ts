@@ -16,8 +16,6 @@ export class Rook extends Figure {
             return false;
         if (this.cell.verticallyAvailable(target))
             return true;
-        if (this.cell.horizontallyAvailable(target))
-            return true;
-        return false;
+        return this.cell.horizontallyAvailable(target);
     }
 }
