@@ -45,7 +45,7 @@ const BoardComponent: FC<BoardProps> = ({board, currentPlayer, turnPlayer}) => {
                     />
                    )}
                </React.Fragment>
-            )};
+            )}
         </div>
     );
 };

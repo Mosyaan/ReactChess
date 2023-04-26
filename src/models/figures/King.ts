@@ -14,6 +14,8 @@ export class King extends Figure {
     }
 
     canMove(target: Cell): boolean {
-        return super.canMove(target);
+        if (!super.canMove(target))
+            return false;
+        return !(Math.abs(this.cell.x - target.x) > 1 || Math.abs(this.cell.y - target.y) > 1);
     }
 }

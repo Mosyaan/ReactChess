@@ -32,6 +32,9 @@ export class Cell {
         return false;
     }
 
+    // kingIsChecked() {}
+    // kingIsMated() {}
+
     verticallyAvailable(target: Cell): boolean {
         if (this.x !== target.x) {
             return false;
